@@ -22,7 +22,7 @@
 <script>
     function formatTime(seconds) {
         d = Math.floor(seconds / 86400);
-        if (d == 2) d = d.toString() + ' дня ';
+        if (d == 2 || d == 3) d = d.toString() + ' дня ';
         if (d == 1) d = d.toString() + ' день ';
         if (d == 0) d = '';
         const h = Math.floor(seconds / 3600) % 24;
