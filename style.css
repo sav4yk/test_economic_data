@@ -12,6 +12,11 @@
     animation: blinkRed 0.5s
 }
 
+.blink {
+    border-radius: 70%;
+    background-color: #2d321e;
+}
+
 .green {
 
     width: 24px;
@@ -20,6 +25,8 @@
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
 }
+
+
 
 #indicator {
     margin-left: 25px;

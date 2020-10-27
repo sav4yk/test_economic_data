@@ -60,15 +60,21 @@
                 var data = JSON.parse(result);
                 i = 0;
                 interval = setInterval(function () {
-                    if (data.time_rest < 100) {
+                    if (data.time_rest == i) {
                         clearInterval(interval);
                         updateData(); //если время вот-вот кончится, отправляем еще один запрос на сервер
                     }
+                    $('#indicator').addClass('green');
+                    $('#indicator').removeClass('red');
                     if (data.type == 'end') {
                         $('#text').html('Торги на NYSE, NASDAQ закроются через: ' +
                             formatTime(data.time_rest - i) + ' по МСК');
                         $('#indicator').addClass('green');
                         $('#indicator').removeClass('red');
+                        if (i%2 ==0)
+                            $('#indicator').addClass('blink');
+                        else
+                            $('#indicator').removeClass('blink');
                     }
                     if (data.type == 'start') {
                         $('#text').html('Торги на NYSE, NASDAQ откроются через: ' +
